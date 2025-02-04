@@ -59,7 +59,8 @@ dependencies = [
     # NOTE: Liger kernel will soon deprecate support for versions < 4.46.1.
     # https://github.com/linkedin/Liger-Kernel/blob/5c5a7b4f67772f2196efd69d0821b28c0e4ac45e/src/liger_kernel/transformers/monkey_patch.py#L40
     # OLD: "transformers>=4.45.2,<4.46",
-    "transformers>=4.47.0,<4.48",
+    # "transformers>=4.47.0,<4.48",
+    "transformers>=4.48.0",
     # OLD: "trl>=0.11.4,<0.12",
     "trl>=0.13.0,<0.14",
     "typer",                      # Used by CLI
