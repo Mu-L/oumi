@@ -249,7 +249,8 @@ def test_multimodal_trainer(
 
     trainer = Trainer(
         model=model,
-        tokenizer=tokenizer,
+        # tokenizer=tokenizer,
+        processing_class=tokenizer,
         args=training_params,
         train_dataset=dataset,
         fsdp_params=fsdp_params,
