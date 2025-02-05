@@ -120,10 +120,12 @@ def new_decoder_forward(
     """New decoder forward."""
     assert isinstance(
         self.self_attn,
-        transformers_models.llama.modeling_llama.LlamaFlashAttention2,
+        transformers_models.llama.modeling_llama.LlamaAttention,
+        # transformers_models.llama.modeling_llama.LlamaFlashAttention2,
     ) or isinstance(
         self.self_attn,
-        transformers_models.mistral.modeling_mistral.MistralFlashAttention2,
+        transformers_models.mistral.modeling_mistral.MistralAttention,
+        # transformers_models.mistral.modeling_mistral.MistralFlashAttention2,
     ), (
         "Please toggle on the Flash Attention 2 implementation "
         "when using zigzag ring attention monkey patch."

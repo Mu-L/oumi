@@ -52,6 +52,7 @@ run: |
   source ./configs/examples/misc/sky_init.sh
 
   pip install -e ".[gpu]"
+  pip install -U flash-attn --no-build-isolation
 
   set -x
   oumi distributed torchrun \

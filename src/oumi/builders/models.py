@@ -242,6 +242,14 @@ def build_huggingface_model(
     # Required for FSDP.
     # Context: https://github.com/huggingface/transformers/issues/28499
     model.config.use_cache = False
+    if hasattr(model.config, "text_config"):
+        logger.info(
+            "\n\n\nUpdating text_config..."
+            # f"original hiden_size: {model.config.hidden_size}"
+            f"text_config hiden_size: {model.config.text_config.hidden_size}\n\n\n"
+        )
+        model.config.hidden_size = model.config.text_config.hidden_size
+        model.config.text_config.use_cache = False
 
     # TODO Find a better way to handle it
 

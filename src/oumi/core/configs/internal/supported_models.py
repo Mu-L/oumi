@@ -254,7 +254,7 @@ def get_all_models_map() -> (
         ),
         _ModelTypeInfo(
             model_type="mllama",
-            model_class=default_vlm_class,
+            model_class=transformers.MllamaForConditionalGeneration,
             tested=True,
             config=_create_mllama_vlm_config(),
         ),
